@@ -5,13 +5,13 @@ function Header() {
   return (
     <header className="sticky top-0 left-0 right-0 z-10 flex flex-col bg-white border-b-3 border-black h-52 border-b-4 ">
       <div className="flex justify-between items-center bg-black text-white px-14 py-1 text-sm">
-        <p>력셔리 쇼핑은 Blan</p>
+        <p>력셔리 쇼핑은 Balanco</p>
         <p>Online luxury boutique</p>
         <HeaderMenu />
       </div>
       <div className="flex justify-center items-center flex-grow pt-2.5">
         <div className="text-5xl">
-          <Link href="/">Blan</Link>
+          <Link href="/">Balanco</Link>
         </div>
       </div>
       <nav className="mx-auto">
