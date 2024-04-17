@@ -70,8 +70,9 @@ function LogInModal() {
                 message: "8글자 이상 입력해주세요",
               },
             })}
-            type="password"
             placeholder="비밀번호"
+            showIconPath="/utils/icons/passwordShow.png"
+            hideIconPath="/utils/icons/passwordHide.png"
             disabled={isPending}
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
