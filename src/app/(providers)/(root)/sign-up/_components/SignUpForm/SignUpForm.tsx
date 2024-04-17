@@ -3,25 +3,32 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import ErrorMessage from "@/components/Input/ErrorMessage";
+import useMutationSignUp from "@/hooks/react-query/auth/useMutationSignUp";
+import { useAuthStore } from "@/stores/auth/authStore";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 import { useForm } from "react-hook-form";
 
 interface ISignUpForm {
   email: string;
-  name: string;
   password: string;
   passwordConfirm: string;
 }
 
 function SignUpForm() {
+  const auth = useAuthStore();
+  const router = useRouter();
+  const { mutateAsync: signUp, isPending } = useMutationSignUp();
+
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
     setError,
   } = useForm<ISignUpForm>();
 
-  const onValid = (data: ISignUpForm) => {
+  const onValid = async (data: ISignUpForm) => {
     console.log(data);
     if (data.password !== data.passwordConfirm) {
       setError(
@@ -29,21 +36,27 @@ function SignUpForm() {
         { message: "비밀번호가 일치하지 않습니다" },
         { shouldFocus: true }
       );
+    } else {
+      try {
+        const email = data.email;
+        const password = data.password;
+
+        await signUp({ email, password });
+        auth.setIsLoggedIn(true);
+      } catch (error) {
+        alert("회원가입에 실패하였습니다");
+      }
     }
   };
 
+  useEffect(() => {
+    if (auth.isLoggedIn) {
+      router.push("/");
+    }
+  }, [auth.isLoggedIn, router]);
+
   return (
     <form onSubmit={handleSubmit(onValid)} className="flex flex-col gap-y-6">
-      <div>
-        <Input
-          {...register("name", {
-            required: "이름을 입력해주세요",
-            maxLength: 10,
-          })}
-          placeholder="이름"
-        />
-        <ErrorMessage>{errors?.name?.message}</ErrorMessage>
-      </div>
       <div>
         <Input
           {...register("email", {
@@ -53,6 +66,7 @@ function SignUpForm() {
               message: "올바른 이메일 형식으로 작성해주세요",
             },
           })}
+          type="email"
           placeholder="이메일"
         />
         <ErrorMessage>{errors.email?.message}</ErrorMessage>
@@ -66,6 +80,7 @@ function SignUpForm() {
               message: "8글자 이상 입력해주세요",
             },
           })}
+          type="password"
           placeholder="비밀번호"
         />
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
@@ -79,6 +94,7 @@ function SignUpForm() {
               message: "8글자 이상 입력해주세요",
             },
           })}
+          type="password"
           placeholder="비밀번호 확인"
         />
         <ErrorMessage>{errors.passwordConfirm?.message}</ErrorMessage>
