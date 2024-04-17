@@ -71,6 +71,7 @@ function SignUpForm() {
           type="text"
           error={!!errors.email}
           placeholder="email@example.com"
+          disabled={isPending}
         />
 
         <ErrorMessage>{errors?.email?.message}</ErrorMessage>
@@ -84,8 +85,10 @@ function SignUpForm() {
               message: "8글자 이상 입력해주세요",
             },
           })}
-          type="password"
           placeholder="비밀번호"
+          showIconPath="/utils/icons/passwordShow.png"
+          hideIconPath="/utils/icons/passwordHide.png"
+          disabled={isPending}
         />
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
       </div>
@@ -98,8 +101,10 @@ function SignUpForm() {
               message: "8글자 이상 입력해주세요",
             },
           })}
-          type="password"
           placeholder="비밀번호 확인"
+          showIconPath="/utils/icons/passwordShow.png"
+          hideIconPath="/utils/icons/passwordHide.png"
+          disabled={isPending}
         />
         <ErrorMessage>{errors.passwordConfirm?.message}</ErrorMessage>
       </div>
