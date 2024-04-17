@@ -57,6 +57,7 @@ function LogInModal() {
             type="text"
             error={!!errors.email}
             placeholder="email@example.com"
+            disabled={isPending}
           />
           <ErrorMessage>{errors?.email?.message}</ErrorMessage>
         </div>
@@ -71,6 +72,7 @@ function LogInModal() {
             })}
             type="password"
             placeholder="비밀번호"
+            disabled={isPending}
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
         </div>
