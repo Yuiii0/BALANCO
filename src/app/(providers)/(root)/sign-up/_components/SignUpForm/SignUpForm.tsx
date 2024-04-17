@@ -104,7 +104,9 @@ function SignUpForm() {
         <ErrorMessage>{errors.passwordConfirm?.message}</ErrorMessage>
       </div>
 
-      <Button color="black">회원가입</Button>
+      <Button color="black" disabled={isPending}>
+        회원가입
+      </Button>
     </form>
   );
 }
