@@ -25,7 +25,7 @@ function HeaderMenu() {
 
   return (
     <Authenticated>
-      <div>
+      <div className="flex gap-x-6 ">
         {auth.isLoggedIn ? (
           <>
             <Link href="/my-page">마이페이지</Link>
