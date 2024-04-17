@@ -29,7 +29,6 @@ function SignUpForm() {
   } = useForm<ISignUpForm>();
 
   const onValid = async (data: ISignUpForm) => {
-    console.log(data);
     if (data.password !== data.passwordConfirm) {
       setError(
         "passwordConfirm",
@@ -56,8 +55,11 @@ function SignUpForm() {
   }, [auth.isLoggedIn, router]);
 
   return (
-    <form onSubmit={handleSubmit(onValid)} className="flex flex-col gap-y-6">
-      <div>
+    <form
+      onSubmit={handleSubmit(onValid)}
+      className="flex flex-col gap-y-2 w-1/2 mx-auto"
+    >
+      <div className="flex flex-col gap-y-1">
         <Input
           {...register("email", {
             required: "이메일을 입력해주세요",
@@ -66,12 +68,14 @@ function SignUpForm() {
               message: "올바른 이메일 형식으로 작성해주세요",
             },
           })}
-          type="email"
-          placeholder="이메일"
+          type="text"
+          error={!!errors.email}
+          placeholder="email@example.com"
         />
-        <ErrorMessage>{errors.email?.message}</ErrorMessage>
+
+        <ErrorMessage>{errors ? errors.email?.message : "ab"}</ErrorMessage>
       </div>
-      <div>
+      <div className="flex flex-col gap-y-1">
         <Input
           {...register("password", {
             required: "비밀번호를 입력해주세요",
@@ -85,7 +89,7 @@ function SignUpForm() {
         />
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
       </div>
-      <div>
+      <div className="flex flex-col gap-y-1">
         <Input
           {...register("passwordConfirm", {
             required: "비밀번호 확인을 입력해주세요",
