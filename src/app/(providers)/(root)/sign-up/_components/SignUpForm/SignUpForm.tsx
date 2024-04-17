@@ -73,7 +73,7 @@ function SignUpForm() {
           placeholder="email@example.com"
         />
 
-        <ErrorMessage>{errors ? errors.email?.message : "ab"}</ErrorMessage>
+        <ErrorMessage>{errors?.email?.message}</ErrorMessage>
       </div>
       <div className="flex flex-col gap-y-1">
         <Input
