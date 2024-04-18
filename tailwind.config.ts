@@ -13,11 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
-    boxShadow: {
-      primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
+      colors: {
+        warning: "#BD081C",
+      },
+      boxShadow: {
+        primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
