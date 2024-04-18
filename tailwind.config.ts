@@ -15,9 +15,14 @@ const config: Config = {
       },
       colors: {
         warning: "#BD081C",
+        lightgray: "#cecece",
       },
       boxShadow: {
         primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
+      },
+      fontFamily: {
+        spoqa: ["SpoqaHanSansNeo", "sans-serif"],
+        Montserrat: ["Montserrat", "serif"],
       },
     },
   },
