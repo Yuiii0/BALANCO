@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeaderMenu from "./components/HeaderMenu";
-import SearchBar from "./components/SearchBar";
 
 function Header() {
   return (
@@ -44,7 +43,6 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <SearchBar />
       </div>
     </header>
   );
