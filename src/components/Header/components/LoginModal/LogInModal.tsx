@@ -6,6 +6,7 @@ import Modal from "@/components/Modal";
 import { useModal } from "@/contexts/modal.context";
 import useMutationLogIn from "@/hooks/react-query/auth/useMutationLogin";
 import { useAuthStore } from "@/stores/auth/authStore";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { useForm } from "react-hook-form";
@@ -38,12 +39,15 @@ function LogInModal() {
       alert("로그인에 실패하였습니다");
     }
   };
+  const handleClickSignUpLink = () => {
+    modal.close();
+  };
   return (
     <Modal>
       <Heading>로그인</Heading>
       <form
         onSubmit={handleSubmit(onValid)}
-        className="w-full flex flex-col gap-y-1 px-2 mb-6"
+        className="w-full flex flex-col gap-y-1 px-2 "
       >
         <div className="flex flex-col gap-y-1">
           <Input
@@ -61,7 +65,7 @@ function LogInModal() {
           />
           <ErrorMessage>{errors?.email?.message}</ErrorMessage>
         </div>
-        <div className="flex flex-col gap-y-1 mb-2s">
+        <div className="flex flex-col gap-y-1 mb-2">
           <Input
             {...register("password", {
               required: "비밀번호를 입력해주세요",
@@ -80,6 +84,13 @@ function LogInModal() {
         <Button color="black" disabled={isPending}>
           로그인
         </Button>
+        <Link
+          href="/sign-up"
+          className="text-sm mt-5 text-center transition hover:underline"
+          onClick={handleClickSignUpLink}
+        >
+          회원가입 하러가기
+        </Link>
       </form>
     </Modal>
   );
