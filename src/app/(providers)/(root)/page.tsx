@@ -8,6 +8,10 @@ import ProductCardList from "@/components/ProductCardsList";
 import { Product } from "@/types/Product.type";
 import { useEffect, useState } from "react";
 
+interface PageChangeEvent {
+  selected: number;
+}
+
 function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [pageNumber, setPageNumber] = useState(0);
@@ -21,8 +25,8 @@ function HomePage() {
     fetchProduct();
   }, []);
 
-  const handlePageChange = ({ selected }) => {
-    setPageNumber(selected);
+  const handlePageChange = (event: PageChangeEvent) => {
+    setPageNumber(event.selected);
   };
 
   const pagesVisited = pageNumber * itemsPerPage;
