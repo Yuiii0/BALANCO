@@ -6,15 +6,29 @@ import { IoIosSearch } from "react-icons/io";
 function SearchBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const placeholder = "버버리";
+
   const router = useRouter();
 
   const handleClickSearchBtn = () => {
-    if (isVisible && searchTerm) {
-      router.push(`/?search=${encodeURIComponent(searchTerm)}`);
-      setSearchTerm("");
+    if (isVisible) {
+      handleSearch();
     } else {
       setIsVisible((prev) => !prev);
     }
+  };
+
+  const handleKeyDown = (e: any) => {
+    if (e.key === "Enter" && isVisible) {
+      handleSearch();
+    }
+  };
+
+  const handleSearch = () => {
+    const term = searchTerm || placeholder;
+    console.log("term", term);
+    router.push(`/?search=${encodeURIComponent(term)}`);
+    setSearchTerm("");
   };
 
   return (
@@ -22,7 +36,8 @@ function SearchBar() {
       {isVisible && (
         <input
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="샤넬"
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder}
           value={searchTerm}
           className="border rounded-sm  focus:border-black transition-all duration-500 ease-in-out outline-none  cursor-pointer text-gray-500 font-light placeholder:text-gray-400 text-xs px-2 py-1"
         />
