@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: "Spoqa Han Sans Neo", sans-serif;
+  @apply font-spoqa;
 }
 
 @layer utilities {
@@ -20,6 +20,8 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Sedan:ital@0;1&display=swap");
 
 @font-face {
   font-family: "SpoqaHanSansNeo";
