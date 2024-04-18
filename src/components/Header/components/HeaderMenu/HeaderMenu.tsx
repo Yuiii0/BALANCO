@@ -6,6 +6,9 @@ import Authenticated from "@/stores/auth/Authenticated";
 import { useAuthStore } from "@/stores/auth/authStore";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
+import { IoCartOutline } from "react-icons/io5";
 import LoginModal from "../LoginModal";
 
 function HeaderMenu() {
@@ -26,17 +29,26 @@ function HeaderMenu() {
   return (
     <Authenticated>
       <div className="flex gap-x-6 font-semibold">
+        <Link href="/my-page">
+          <AiOutlineUser className="cursor-pointer text-lg" />
+        </Link>
+        <Link href="/cart">
+          <IoCartOutline className="cursor-pointer  text-lg" />
+        </Link>
         {auth.isLoggedIn ? (
-          <>
-            <Link href="/my-page">마이페이지</Link>
-            <Link href="/cart">장바구니</Link>
-            <button onClick={handleClickLogOut}>로그아웃</button>
-          </>
+          <button onClick={handleClickLogOut}>
+            <IoIosLogOut
+              className="cursor-pointer  text-lg
+              "
+            />
+          </button>
         ) : (
-          <>
-            <Link href="/sign-up">회원가입</Link>
-            <button onClick={handleClickLogin}>로그인</button>
-          </>
+          <IoIosLogIn
+            onClick={handleClickLogin}
+            className="text-lg  cursor-pointer"
+          >
+            로그인
+          </IoIosLogIn>
         )}
       </div>
     </Authenticated>
