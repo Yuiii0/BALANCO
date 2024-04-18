@@ -7,6 +7,7 @@ import Pagination from "@/components/Pagination";
 import ProductCardList from "@/components/ProductCardsList";
 import { Product } from "@/types/Product.type";
 import { useEffect, useState } from "react";
+import SearchTerm from "./_components/SearchTerm/SearchTerm";
 
 interface PageChangeEvent {
   selected: number;
@@ -48,13 +49,23 @@ function HomePage(props: { searchParams: { search?: string } }) {
 
   return (
     <Page>
-      <Heading>New In</Heading>
+      {searchTerm ? (
+        <SearchTerm
+          productCount={filteredProducts.length}
+          searchTerm={searchTerm}
+        />
+      ) : (
+        <Heading>New In</Heading>
+      )}
+
       <ProductCardList products={displayProducts} />
-      <Pagination
-        currentPage={pageNumber}
-        pageCount={pageCount}
-        onPageChange={handlePageChange}
-      />
+      {displayProducts.length > 0 && (
+        <Pagination
+          currentPage={pageNumber}
+          pageCount={pageCount}
+          onPageChange={handlePageChange}
+        />
+      )}
     </Page>
   );
 }
