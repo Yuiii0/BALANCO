@@ -1,0 +1,34 @@
+.pagination {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  > * {
+    cursor: pointer;
+  }
+}
+
+.pagination__link {
+  font-size: 14px;
+  transition: all 0.25s;
+  padding: 0.5rem;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.pagination__link__active {
+  background-color: #212121;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  justify-content: center;
+  border-radius: 50%;
+}
