@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         warning: "#BD081C",
         lightgray: "#cecece",
+        salmon: "#f1736e",
+        "custom-gray": "#999999",
       },
       boxShadow: {
         primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
@@ -23,6 +25,7 @@ const config: Config = {
       fontFamily: {
         spoqa: ["SpoqaHanSansNeo", "sans-serif"],
         Montserrat: ["Montserrat", "serif"],
+        notoSans: ["Noto Sans KR", "SpoqaHanSansNeo"],
       },
     },
   },
