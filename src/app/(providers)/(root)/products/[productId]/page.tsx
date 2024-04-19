@@ -1,13 +1,14 @@
 import api from "@/apis";
 import Page from "@/components/Page";
+import ShoppingCart from "@/components/ShoppingCart";
 import { calculateDiscountPercentage } from "@/utils/calculateDiscount";
 import formatPrice from "@/utils/formatPrice.utils";
 import Image from "next/image";
 import Link from "next/link";
 
 async function ProductPage(props: { params: { productId: string } }) {
-  const productId = props.params.productId;
-  const product = await api.products.getProduct(Number(productId));
+  const productId = Number(props.params.productId);
+  const product = await api.products.getProduct(productId);
   console.log(product);
 
   return (
@@ -49,6 +50,7 @@ async function ProductPage(props: { params: { productId: string } }) {
             <div className="text-slate-900 font-bold ">잔여 재고</div>
             <div className="col-span-4 font-light">{`${product.onlineStock}개`}</div>
           </div>
+          <ShoppingCart productId={productId} />
         </div>
       </section>
     </Page>
