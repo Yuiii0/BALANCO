@@ -5,15 +5,15 @@ import { calculateDiscountPercentage } from "@/utils/calculateDiscount";
 import formatPrice from "@/utils/formatPrice.utils";
 import Image from "next/image";
 import Link from "next/link";
+import ShoppingCart from "../ShoppingCart";
 
 interface ProductCardProps {
   product: Product;
 }
 
 function ProductCard({ product }: ProductCardProps) {
-  const handleClickCartBtn = () => {};
   return (
-    <>
+    <div className="relative">
       <Link href={`/products/${product.id}`} className="group">
         <div className=" mb-5 aspect-[3/4] relative overflow-hidden border-transparent border-b-[4px] group-hover:border-black transition-colors">
           <Image
@@ -32,7 +32,7 @@ function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h6>
           <div className="flex gap-x-2 items-center justify-center">
-            <span className="text-sm line-through font-extralight text-gray-400">
+            <span className="text-sm font-extralight text-gray-400">
               {formatPrice(product.originalPrice)}
             </span>
             <span className="text-sm font-bold">
@@ -47,13 +47,10 @@ function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </Link>
-      <button
-        className="mt-6 text-center font-semibold text-sm border-gray-200 border-b-2 w-1/2 mx-auto flex justify-center hover:border-black transition"
-        onClick={handleClickCartBtn}
-      >
-        장바구니 추가
+      <button className="mt-6 flex  hover:scale-110 transition absolute right-1">
+        <ShoppingCart productId={product.id} iconType />
       </button>
-    </>
+    </div>
   );
 }
 

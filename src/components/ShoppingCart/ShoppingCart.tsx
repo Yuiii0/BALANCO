@@ -5,6 +5,10 @@ import useMutationAddItemToCart from "@/hooks/react-query/cart/useMutationAddIte
 import useMutationClearItemInCart from "@/hooks/react-query/cart/useMutationClearItemInCart";
 import useQueryGetCart from "@/hooks/react-query/cart/useQueryGetCart";
 import { useAuthStore } from "@/stores/auth/authStore";
+import {
+  MdOutlineAddShoppingCart,
+  MdOutlineRemoveShoppingCart,
+} from "react-icons/md";
 import Button from "../Button";
 import LogInModal from "../Header/components/LoginModal/LogInModal";
 
@@ -40,7 +44,13 @@ function ShoppingCartButton({ iconType, productId }: AddToCartButtonProps) {
   };
 
   return iconType ? (
-    <div>아이콘</div>
+    <button onClick={handleClickButton} className="cursor-pointer text-xl">
+      {isAlreadyAdded ? (
+        <MdOutlineRemoveShoppingCart />
+      ) : (
+        <MdOutlineAddShoppingCart />
+      )}
+    </button>
   ) : (
     <Button
       color={isAlreadyAdded ? "white" : "black"}
