@@ -1,9 +1,22 @@
-import { IoMdHeartEmpty } from "react-icons/io";
+"use client";
 
-function LikeProductButton() {
+import { useLikedProductsStore } from "@/stores/products/likedProductsStore";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
+interface LikeProductButtonProps {
+  productId: number;
+}
+
+function LikeProductButton({ productId }: LikeProductButtonProps) {
+  const { toggleLikedProduct, isLiked, likedProducts } =
+    useLikedProductsStore();
+  const isLikedProduct = isLiked(productId);
+
   return (
-    <button>
-      <IoMdHeartEmpty />
+    <button
+      onClick={() => toggleLikedProduct(productId)}
+      className="cursor-pointer text-2xl transition"
+    >
+      {isLikedProduct ? <IoMdHeart /> : <IoMdHeartEmpty />}
     </button>
   );
 }
