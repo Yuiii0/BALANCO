@@ -1,6 +1,6 @@
 import { Response } from "@/types/Response.type";
 import { client } from "..";
-import { GetProductsData } from "./products.data";
+import { GetProductData, GetProductsData } from "./products.data";
 
 async function getProducts() {
   const response = await client.get<Response<GetProductsData>>("/products");
@@ -12,7 +12,7 @@ async function getProducts() {
   return products;
 }
 async function getProduct(productId: number) {
-  const response = await client.get<Response<GetProductsData>>(
+  const response = await client.get<Response<GetProductData>>(
     `/products/${productId}`
   );
   const data = response.data;
