@@ -5,6 +5,7 @@ import { calculateDiscountPercentage } from "@/utils/calculateDiscount";
 import formatPrice from "@/utils/formatPrice.utils";
 import Image from "next/image";
 import Link from "next/link";
+import LikeProductButton from "../LikeProductButton";
 import ShoppingCart from "../ShoppingCart";
 
 interface ProductCardProps {
@@ -47,9 +48,14 @@ function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </Link>
-      <button className="mt-6 flex  hover:scale-110 transition absolute right-1">
-        <ShoppingCart productId={product.id} iconType />
-      </button>
+      <div className="mt-6 flex items-center absolute right-1 gap-x-2">
+        <button className="  hover:scale-110 transition ">
+          <LikeProductButton productId={product.id} />
+        </button>
+        <button className="  hover:scale-110 transition ">
+          <ShoppingCart productId={product.id} iconType />
+        </button>
+      </div>
     </div>
   );
 }
