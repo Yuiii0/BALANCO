@@ -20,11 +20,8 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Sedan:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&display=swap");
-
-@font-face {
+/* @font-face {
   font-family: "SpoqaHanSansNeo";
   font-weight: 400;
   src: url("/path-to-fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2");
@@ -41,4 +38,4 @@ input:-webkit-autofill:active {
   font-family: "SpoqaHanSansNeo";
   font-weight: 700;
   src: url("/path-to-fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
-}
+} */
