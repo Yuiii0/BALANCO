@@ -1,15 +1,15 @@
-import { CartItem as CartProduct } from "@/types/Cart.type";
+import { CartItem } from "@/types/Cart.type";
 import formatPrice from "@/utils/formatPrice.utils";
 import { getDeliveryDate } from "@/utils/getDeliveryDate";
 import { truncateText } from "@/utils/truncateText";
 import Image from "next/image";
 import ItemQuantityController from "../ItemQuantityController";
 
-interface CartItemProps {
-  cartItem: CartProduct;
+interface CartProductProps {
+  cartItem: CartItem;
 }
 
-function CartProduct({ cartItem }: CartItemProps) {
+function CartProduct({ cartItem }: CartProductProps) {
   const product = cartItem.product;
 
   return (
