@@ -16,7 +16,7 @@ function TotalPrice({ totalPrice }: TotalPriceProps) {
 
   return (
     <div>
-      <div className=" px-12 py-8 w-4/6 mx-auto bg-bg-lightgray flex flex-col gap-y-3">
+      <div className=" px-12 py-8 w-4/6 mx-auto bg-bg-lightgray flex flex-col gap-y-3 mt-10">
         <span className="text-xs font-extralight text-end pb-2 border-b text-slate-700 rounded-sm">
           10만원 이상 무료배송
         </span>
