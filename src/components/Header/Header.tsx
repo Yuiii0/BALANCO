@@ -20,6 +20,10 @@ function Header() {
     };
   }, [showNav]);
 
+  const handleClickNavItem = () => {
+    alert("BRAND를 눌러보세요 😮");
+  };
+
   return (
     <header className="sticky top-0 left-0 right-0 z-10 flex flex-col bg-white border-b ">
       <div className="flex justify-between items-center font-semibold border-t-[8px] border-black text-gray-900 px-14 pt-3 text-sm">
@@ -44,25 +48,22 @@ function Header() {
               <li className="hover:text-gray-600">
                 <Link href="#">NEW IN</Link>
               </li>
-              <li className="hover:text-gray-600">
-                <Link href="#" className="font-bold text-gray-400">
+              <li className="text-custom-gray hover:text-warning">
+                <Link href="#" className="font-bold ">
                   BRAND
                 </Link>
               </li>
               <li className="hover:text-gray-600">
-                <Link href="#">의류</Link>
+                <button onClick={handleClickNavItem}>의류</button>
               </li>
               <li className="hover:text-gray-600">
-                <Link href="#">슈즈</Link>
+                <button onClick={handleClickNavItem}>슈즈</button>
               </li>
               <li className="hover:text-gray-600">
-                <Link href="#">가방</Link>
+                <button onClick={handleClickNavItem}>가방</button>
               </li>
               <li className="hover:text-gray-600">
-                <Link href="#">액세서리</Link>
-              </li>
-              <li className="hover:text-gray-600">
-                <Link href="#">주얼리</Link>
+                <button onClick={handleClickNavItem}>악세서리</button>
               </li>
             </ul>
           </nav>
