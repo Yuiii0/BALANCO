@@ -40,9 +40,9 @@ function CartItem({ cartItem }: CartItemProps) {
           productId={product.id}
         />
         <div className="flex  w-28 justify-end self-center">
-          <div className="font-bold text-lg">{`${formatPrice(
-            product.price
-          )}원`}</div>
+          <div className="font-bold text-lg">
+            {`${formatPrice(product.price * cartItem.quantity)}원`}
+          </div>
         </div>
       </div>
     </div>
