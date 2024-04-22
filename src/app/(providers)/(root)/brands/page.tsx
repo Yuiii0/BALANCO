@@ -38,7 +38,11 @@ async function BrandsPage(props: { searchParams: { brandId?: string } }) {
           </ul>
         </nav>
       </div>
-
+      {brandId && (
+        <h2 className="font-bold text-2xl text-center py-4">
+          {products[0].brand.nameEn}
+        </h2>
+      )}
       <ProductCardsList products={products} />
     </Page>
   );
