@@ -4,6 +4,8 @@
 
 html,
 body {
+  user-select: none;
+  -webkit-user-drag: none;
   @apply font-spoqa;
 }
 
@@ -21,7 +23,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&display=swap");
-/* @font-face {
+@font-face {
   font-family: "SpoqaHanSansNeo";
   font-weight: 400;
   src: url("/path-to-fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2");
@@ -38,4 +40,4 @@ input:-webkit-autofill:active {
   font-family: "SpoqaHanSansNeo";
   font-weight: 700;
   src: url("/path-to-fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
-} */
+}
