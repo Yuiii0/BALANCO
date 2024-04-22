@@ -10,7 +10,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowNav(window.scrollY < 100);
+      setShowNav(window.scrollY < 160);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -49,7 +49,7 @@ function Header() {
                 <Link href="#">NEW IN</Link>
               </li>
               <li className="text-custom-gray hover:text-warning">
-                <Link href="#" className="font-bold ">
+                <Link href="/brands" className="font-bold ">
                   BRAND
                 </Link>
               </li>
