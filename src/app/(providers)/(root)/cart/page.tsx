@@ -5,7 +5,7 @@ import Page from "@/components/Page";
 import useQueryGetCart from "@/hooks/react-query/cart/useQueryGetCart";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
-import CartItem from "./_components/CartItem";
+import CartItem from "./_components/CartProduct";
 import TotalPrice from "./_components/TotalPrice";
 
 function CartPage() {

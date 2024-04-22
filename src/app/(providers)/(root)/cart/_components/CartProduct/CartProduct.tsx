@@ -1,4 +1,4 @@
-import { CartItem } from "@/types/Cart.type";
+import { CartItem as CartProduct } from "@/types/Cart.type";
 import formatPrice from "@/utils/formatPrice.utils";
 import { getDeliveryDate } from "@/utils/getDeliveryDate";
 import { truncateText } from "@/utils/truncateText";
@@ -6,10 +6,10 @@ import Image from "next/image";
 import ItemQuantityController from "../ItemQuantityController";
 
 interface CartItemProps {
-  cartItem: CartItem;
+  cartItem: CartProduct;
 }
 
-function CartItem({ cartItem }: CartItemProps) {
+function CartProduct({ cartItem }: CartItemProps) {
   const product = cartItem.product;
 
   return (
@@ -51,4 +51,4 @@ function CartItem({ cartItem }: CartItemProps) {
   );
 }
 
-export default CartItem;
+export default CartProduct;
