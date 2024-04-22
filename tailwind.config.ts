@@ -17,6 +17,7 @@ const config: Config = {
         warning: "#BD081C",
         lightgray: "#cecece",
         salmon: "#f1736e",
+        "bg-lightgray": "#f6f6f6",
         "custom-gray": "#999999",
       },
       boxShadow: {
