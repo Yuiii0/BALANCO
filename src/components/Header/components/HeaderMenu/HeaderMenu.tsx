@@ -29,7 +29,7 @@ function HeaderMenu() {
   return (
     <Authenticated>
       <div className="flex gap-x-6 font-semibold">
-        <Link href="/my-page">
+        <Link href="/mypage">
           <AiOutlineUser className="cursor-pointer text-lg" />
         </Link>
         <Link href="/cart">
