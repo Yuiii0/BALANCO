@@ -5,7 +5,7 @@ interface ProductCardsListProps {
   products: Product[];
 }
 
-function ProductCardList({ products }: ProductCardsListProps) {
+function ProductCardsList({ products }: ProductCardsListProps) {
   return (
     <ul
       className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6
@@ -13,7 +13,7 @@ function ProductCardList({ products }: ProductCardsListProps) {
     "
     >
       {products.map((product) => (
-        <li key={product.id}>
+        <li key={product?.id}>
           <ProductCard product={product} />
         </li>
       ))}
@@ -21,4 +21,4 @@ function ProductCardList({ products }: ProductCardsListProps) {
   );
 }
 
-export default ProductCardList;
+export default ProductCardsList;
