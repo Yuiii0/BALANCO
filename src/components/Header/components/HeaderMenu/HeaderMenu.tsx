@@ -27,15 +27,25 @@ function HeaderMenu() {
     router.push("/");
   };
 
+  const handleClickCart = () => {
+    if (auth.isLoggedIn) {
+      router.push("/cart");
+    } else {
+      modal.open(<LoginModal />);
+    }
+  };
+
   return (
     <Authenticated>
       <div className="flex gap-x-6 font-semibold">
-        <Link href="/mypage">
-          <AiOutlineUser className="cursor-pointer text-lg" />
-        </Link>
-        <Link href="/cart">
+        <button onClick={handleClickCart}>
           <IoCartOutline className="cursor-pointer  text-lg" />
-        </Link>
+        </button>
+        {auth.isLoggedIn && (
+          <Link href="/mypage">
+            <AiOutlineUser className="cursor-pointer text-lg" />
+          </Link>
+        )}
         {auth.isLoggedIn ? (
           <button onClick={handleClickLogOut}>
             <IoIosLogOut
@@ -44,12 +54,9 @@ function HeaderMenu() {
             />
           </button>
         ) : (
-          <IoIosLogIn
-            onClick={handleClickLogin}
-            className="text-lg  cursor-pointer"
-          >
-            로그인
-          </IoIosLogIn>
+          <button onClick={handleClickLogin}>
+            <IoIosLogIn className="text-lg  cursor-pointer"></IoIosLogIn>
+          </button>
         )}
       </div>
     </Authenticated>
