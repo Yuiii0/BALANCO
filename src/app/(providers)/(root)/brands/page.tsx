@@ -1,46 +1,35 @@
-import api from "@/apis";
+"use client";
+
 import Page from "@/components/Page";
 import ProductCardsList from "@/components/ProductCardsList";
+import useQueryGetBrand from "@/hooks/react-query/brands/useQueryGetBrand";
+import useQueryGetProducts from "@/hooks/react-query/products/useQueryGetProducts";
 import { Product } from "@/types/Product.type";
-import BrandLink from "./_components/BrandLink";
+import { useEffect, useState } from "react";
+import BrandNav from "./_components/BrandNav";
 
-async function BrandsPage(props: { searchParams: { brandId?: string } }) {
+function BrandsPage(props: { searchParams: { brandId?: string } }) {
   const brandId = props.searchParams.brandId;
-  let products: Product[] = [];
+  let isFetchTotalProducts = !brandId;
+  const [products, setProducts] = useState<Product[]>([]);
 
-  if (brandId) {
-    let brandResult = await api.brands.getBrand(Number(brandId));
-    products = brandResult.products;
-  } else {
-    products = await api.products.getProducts();
-  }
+  const { data: brandResult } = useQueryGetBrand(Number(brandId));
+  const { data: productsResult } = useQueryGetProducts(isFetchTotalProducts);
 
-  const brands = await api.brands.getBrands();
-  brands.sort((a, b) => a.nameEn.localeCompare(b.nameEn));
+  useEffect(() => {
+    if (brandId && brandResult) {
+      setProducts(brandResult.products);
+    } else {
+      setProducts(productsResult || []);
+    }
+  }, [brandId, brandResult, productsResult]);
 
   return (
     <Page>
-      <div>
-        <nav className="mb-16">
-          <ul className="grid grid-cols-2 sm:grid-cols-4  gap-x-4 gap-y-2 px-12 ">
-            <li className="col-span-2 sm:col-span-4 text-center mb-4 text-lg font-bold ">
-              <BrandLink href="/brands" label="ALL" isActive={!brandId} />
-            </li>
-            {brands.map((brand) => (
-              <li key={brand.id} className="list-none ">
-                <BrandLink
-                  href={`/brands?brandId=${brand.id}`}
-                  label={brand.nameEn}
-                  isActive={brandId === String(brand.id)}
-                />
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      <BrandNav brandId={brandId} />
       {brandId && (
         <h2 className="font-bold text-2xl text-center py-4">
-          {products[0].brand.nameEn}
+          {products[0]?.brand.nameEn}
         </h2>
       )}
       <ProductCardsList products={products} />
