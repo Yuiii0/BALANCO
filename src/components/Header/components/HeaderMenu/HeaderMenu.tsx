@@ -23,6 +23,7 @@ function HeaderMenu() {
   const handleClickLogOut = async () => {
     await api.auth.logOut();
     auth.setIsLoggedIn(false);
+    localStorage.clear();
     router.push("/");
   };
 
