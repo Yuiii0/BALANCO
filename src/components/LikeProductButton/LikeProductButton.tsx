@@ -14,6 +14,7 @@ function LikeProductButton({ productId }: LikeProductButtonProps) {
   return (
     <button
       onClick={() => toggleLikedProduct(productId)}
+      aria-label={isLikedProduct ? "unlike-product" : "like-product"}
       className="cursor-pointer text-2xl transition"
     >
       {isLikedProduct ? <IoMdHeart /> : <IoMdHeartEmpty />}

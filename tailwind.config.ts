@@ -24,6 +24,7 @@ const config: Config = {
         primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
       },
       fontFamily: {
+        oswald: ["Oswald"],
         spoqa: ["SpoqaHanSansNeo", "sans-serif"],
         Montserrat: ["Montserrat", "serif"],
         notoSans: ["Noto Sans KR", "SpoqaHanSansNeo"],
