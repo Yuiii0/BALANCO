@@ -1,5 +1,7 @@
 "use client";
 
+import ErrorComponent from "@/components/ErrorComponent";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import Page from "@/components/Page";
 import ProductCardsList from "@/components/ProductCardsList";
 import useQueryGetBrand from "@/hooks/react-query/brands/useQueryGetBrand";
@@ -13,8 +15,16 @@ function BrandsPage(props: { searchParams: { brandId?: string } }) {
   let isFetchTotalProducts = !brandId;
   const [products, setProducts] = useState<Product[]>([]);
 
-  const { data: brandResult } = useQueryGetBrand(Number(brandId));
-  const { data: productsResult } = useQueryGetProducts(isFetchTotalProducts);
+  const {
+    data: brandResult,
+    isLoading: isBrandLoading,
+    isError: isBrandError,
+  } = useQueryGetBrand(Number(brandId));
+  const {
+    data: productsResult,
+    isLoading: isProductLoading,
+    isError: isProductError,
+  } = useQueryGetProducts(isFetchTotalProducts);
 
   useEffect(() => {
     if (brandId && brandResult) {
@@ -23,6 +33,13 @@ function BrandsPage(props: { searchParams: { brandId?: string } }) {
       setProducts(productsResult || []);
     }
   }, [brandId, brandResult, productsResult]);
+
+  if (isBrandLoading || isProductLoading) {
+    return <LoadingSpinner />;
+  }
+  if (isBrandError || isProductError) {
+    return <ErrorComponent />;
+  }
 
   return (
     <Page>
