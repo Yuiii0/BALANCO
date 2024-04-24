@@ -18,7 +18,7 @@ function MyPage() {
 
   return (
     <Page>
-      <Heading>좋아요한 상품</Heading>
+      <Heading>좋아요한 상품 🖤</Heading>
       <section>
         {products.length > 0 ? (
           <ProductCardsList products={products} />
