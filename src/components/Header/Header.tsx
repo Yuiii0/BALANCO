@@ -1,13 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import HamburgerNav from "./\bHamburgerNav";
 import HeaderMenu from "./components/HeaderMenu";
 import SearchBar from "./components/SearchBar";
 
 function Header() {
   const [showNav, setShowNav] = useState(true);
+  const [showHamburgerNav, setShowHamburgerNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,21 +27,30 @@ function Header() {
     alert("BRAND를 눌러보세요 😮");
   };
 
+  const toggleHamburgerNav = () => {
+    setShowHamburgerNav((prevHamberNav) => !prevHamberNav);
+  };
+  console.log("showHamburgerNav", showHamburgerNav);
+
   return (
     <header className="sticky top-0 left-0 right-0 z-10 flex flex-col bg-white border-b  ">
-      <div className="flex justify-end  items-center font-semibold border-t-[8px] border-black text-gray-900 px-12 pt-3 text-sm">
+      <div className="flex justify-end sm-max:justify-between  items-center font-semibold border-t-[8px] border-black sm-max:px-4 text-gray-900 px-12  pt-3 text-sm">
+        <button onClick={toggleHamburgerNav}>
+          <RxHamburgerMenu className="hidden sm-max:block text-lg cursor-pointer" />
+        </button>
         <HeaderMenu />
       </div>
 
       <div className="flex justify-center">
-        <div className="text-5xl pb-2.5">
+        <div className="text-5xl sm-max:text-[26px] pb-2.5 sm-max:-translate-y-2">
           <Link href="/" className="font-bold font-oswald tracking-tighter">
-            <Image
+            {/* <Image
               src={"/utils/images/logo.png"}
               alt="BLANCO"
               width={200}
               height={40}
-            />
+            /> */}
+            BLANCO
           </Link>
         </div>
       </div>
@@ -48,14 +59,14 @@ function Header() {
       </div>
       {showNav && (
         <div className="flex">
-          <nav className="mx-auto">
+          <nav className="mx-auto sm-max:hidden">
             <ul className="flex justify-center items-center gap-10 pb-3.5 max-w-screen-md font-semibold text-[15px]">
               <li className="group relative">
                 <span className="absolute -bottom-1 w-full bg-black bg-opacity-0 h-1 hidden group-hover:bg-black group-hover:block"></span>
                 <Link href="/">NEW IN</Link>
               </li>
               <li className="text-custom-gray hover:text-warning">
-                <Link href="/brands" className="font-bold ">
+                <Link href="/brands" className="font-bold">
                   BRAND
                 </Link>
               </li>
@@ -79,6 +90,7 @@ function Header() {
           </nav>
         </div>
       )}
+      {showHamburgerNav && <HamburgerNav />}
     </header>
   );
 }
