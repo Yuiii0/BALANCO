@@ -30,10 +30,9 @@ function Header() {
   const toggleHamburgerNav = () => {
     setShowHamburgerNav((prevHamberNav) => !prevHamberNav);
   };
-  console.log("showHamburgerNav", showHamburgerNav);
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-10 flex flex-col bg-white border-b  ">
+    <header className="sticky top-0 left-0 right-0 z-10 flex flex-col bg-white border-b ">
       <div className="flex justify-end sm-max:justify-between  items-center font-semibold border-t-[8px] border-black sm-max:px-4 text-gray-900 px-12  pt-3 text-sm">
         <button onClick={toggleHamburgerNav}>
           <RxHamburgerMenu className="hidden sm-max:block text-lg cursor-pointer" />
