@@ -16,10 +16,10 @@ function CartProduct({ cartItem }: CartProductProps) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="sm-max:flex sm-max:relative sm:pb-2 "
+      className="sm-max:flex sm-max:relative sm:pb-2 sm-max:justify-center "
     >
-      <div className="flex justify-center sm-max:block ">
-        <div className="flex h-48 sm-max:h-[220px] border-b py-5 gap-x-5 sm-max:gap-x-3 ">
+      <div className="flex justify-center sm-max:block  ">
+        <div className="flex h-48 sm-max:h-[220px] border-b py-5 gap-x-5 sm-max:gap-x-3 sm-max:max-w-[340px]  ">
           <div className="mr-2 sm-max:pt-2 ">
             <Image
               alt={product.name}
@@ -29,7 +29,7 @@ function CartProduct({ cartItem }: CartProductProps) {
               className="object-cover sm-max:w-full"
             />
           </div>
-          <div className="flex flex-col w-[400px] sm-max:pt-7 pt-4">
+          <div className="flex flex-col w-[400px] sm:max-w-[300px] sm-max:pt-7 pt-4">
             <div className="font-bold">{product.brand.nameEn}</div>
             <div className="font-light text-gray-600 text-[15px] mb-2 sm-max:mb-3">
               {truncateText(product.name, 40)}
