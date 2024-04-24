@@ -7,6 +7,7 @@ import { IoIosSearch } from "react-icons/io";
 function SearchBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+
   const placeholder = "버버리";
   const router = useRouter();
 
