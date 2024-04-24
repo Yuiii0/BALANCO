@@ -5,8 +5,8 @@ import { calculateDiscountPercentage } from "@/utils/calculateDiscount";
 import formatPrice from "@/utils/formatPrice.utils";
 import Image from "next/image";
 import Link from "next/link";
-import LikeProductButton from "../LikeProductButton";
-import ShoppingCart from "../ShoppingCart";
+import LikeProductButton from "../../LikeProductButton";
+import ShoppingCart from "../../ShoppingCart";
 
 interface ProductCardProps {
   product: Product;
