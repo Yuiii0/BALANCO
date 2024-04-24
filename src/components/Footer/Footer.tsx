@@ -23,16 +23,16 @@ function Footer() {
             <Link href={"#"}>개인정보처리방침</Link>
           </li>
         </ul>
-        <Link
-          href={"#"}
-          className="items-start hover:scale-110"
-          target="_blank"
-        >
+        <Link href={"#"} className="items-start  group" target="_blank">
+          <span className="text-gray-100 text-xs font-light opacity-0 group-hover:opacity-100 underline">
+            portfolio
+          </span>
           <Image
             src={"/utils/images/Yuiii.png"}
             alt="portfolio"
             width={45}
             height={45}
+            className="hover:scale-105"
           />
         </Link>
       </div>
