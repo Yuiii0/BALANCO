@@ -4,7 +4,7 @@ import { MdOutlineEmail } from "react-icons/md";
 
 function Footer() {
   return (
-    <footer className="bg-black h-44 px-16 py-10">
+    <footer className="bg-black h-48 px-16 pt-10 pb-8">
       <div className="flex justify-between">
         <ul className="text-white flex gap-x-4 text-sm transition mb-2">
           <li className="hover:text-gray-300">
@@ -23,7 +23,7 @@ function Footer() {
             <Link href={"#"}>개인정보처리방침</Link>
           </li>
         </ul>
-        <Link href={"#"} className="items-start  group" target="_blank">
+        <Link href={"#"} className="-translate-y-2 group" target="_blank">
           <span className="text-gray-100 text-xs font-light opacity-0 group-hover:opacity-100 underline">
             portfolio
           </span>
@@ -36,7 +36,6 @@ function Footer() {
           />
         </Link>
       </div>
-
       <div className="text-sm font-light text-gray-400">
         <p>Web Balanco</p>
         <p>©2024 Yuiii0 All rights reserved.</p>
