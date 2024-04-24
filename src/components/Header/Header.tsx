@@ -89,7 +89,9 @@ function Header() {
           </nav>
         </div>
       )}
-      {showHamburgerNav && <HamburgerNav />}
+      {showHamburgerNav && (
+        <HamburgerNav setShowHamburgerNav={setShowHamburgerNav} />
+      )}
     </header>
   );
 }
