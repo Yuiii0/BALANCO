@@ -17,7 +17,6 @@ function ItemQuantityController({
 
   const handleClickPlus: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
-    console.log("플러스");
     addItemToCart(productId);
   };
   const handleClickMinus: MouseEventHandler<HTMLButtonElement> = (e) => {
