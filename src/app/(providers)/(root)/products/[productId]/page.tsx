@@ -16,7 +16,7 @@ async function ProductPage(props: { params: { productId: string } }) {
 
   return (
     <Page>
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 pt-10">
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 pt-2 ">
         <div className="relative aspect-[3/4]">
           <Image
             alt={product.name}
