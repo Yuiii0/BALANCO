@@ -23,8 +23,8 @@ function MyPage() {
         {products.length > 0 ? (
           <ProductCardsList products={products} />
         ) : (
-          <section className="flex items-center justify-center flex-col gap-y-12">
-            <h6 className="text-lg  text-custom-gray">
+          <section className="flex items-center justify-center flex-col gap-y-8 py-6 ">
+            <h6 className="text-lg  text-custom-gray sm-max:text-base">
               좋아요한 상품이 없습니다.
             </h6>
             <ShoppingLink />
