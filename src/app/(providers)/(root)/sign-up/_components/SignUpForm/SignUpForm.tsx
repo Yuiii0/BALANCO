@@ -57,7 +57,7 @@ function SignUpForm() {
   return (
     <form
       onSubmit={handleSubmit(onValid)}
-      className="flex flex-col gap-y-2 w-1/2 mx-auto"
+      className="flex flex-col gap-y-2 lg-max:min-w-[300px] min-w-[360px] mx-auto sm-max:pb-6"
     >
       <div className="flex flex-col gap-y-1">
         <Input
