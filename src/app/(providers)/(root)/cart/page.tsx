@@ -1,6 +1,8 @@
 "use client";
 
+import ErrorComponent from "@/components/ErrorComponent";
 import Heading from "@/components/Heading";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import Page from "@/components/Page";
 import ShoppingLink from "@/components/ShoppingLink/ShoppingLink";
 import useQueryGetCart from "@/hooks/react-query/cart/useQueryGetCart";
@@ -8,13 +10,15 @@ import CartItem from "./_components/CartProduct";
 import TotalPrice from "./_components/TotalPrice";
 
 function CartPage() {
-  const { data: cart } = useQueryGetCart();
-  console.log("cart", cart);
+  const { data: cart, isLoading, isError } = useQueryGetCart();
 
   const totalPrice = cart?.items.reduce(
     (acc, item) => acc + item.product.price * item.quantity,
     0
   );
+
+  if (isLoading) return <LoadingSpinner />;
+  if (isError) return <ErrorComponent />;
 
   return (
     <Page>
