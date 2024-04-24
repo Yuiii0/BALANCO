@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import HeaderMenu from "./components/HeaderMenu";
@@ -31,9 +32,14 @@ function Header() {
       </div>
 
       <div className="flex justify-center">
-        <div className="text-5xl pb-4">
+        <div className="text-5xl pb-2.5">
           <Link href="/" className="font-bold font-oswald tracking-tighter">
-            BALANCO
+            <Image
+              src={"/utils/images/logo.png"}
+              alt="BLANCO"
+              width={200}
+              height={40}
+            />
           </Link>
         </div>
       </div>
