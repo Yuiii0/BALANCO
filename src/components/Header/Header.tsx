@@ -46,7 +46,7 @@ function Header() {
             <ul className="flex justify-center items-center gap-10 pb-3.5 max-w-screen-md font-semibold text-[15px]">
               <li className="group relative">
                 <span className="absolute -bottom-1 w-full bg-black bg-opacity-0 h-1 hidden group-hover:bg-black group-hover:block"></span>
-                <Link href="#">NEW IN</Link>
+                <Link href="/">NEW IN</Link>
               </li>
               <li className="text-custom-gray hover:text-warning">
                 <Link href="/brands" className="font-bold ">
