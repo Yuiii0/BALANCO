@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="bg-black h-48 sm-max:h-52 px-16 pt-10 pb-8 sm-max:px-6 sm-max:py-6">
       <div className="flex justify-between ">
-        <ul className="text-white flex sm-max:flex-col gap-x-4 sm-max:gap-y-1 text-sm sm-max:text-[8px] sm-max:font-light sm-max:text-xs  transition mb-2">
+        <ul className="text-white flex sm-max:flex-col gap-x-4 sm-max:gap-y-1 text-sm sm-max:text-[11px] sm-max:font-light sm-max:text-xs  transition mb-2">
           <li className="hover:text-gray-300">
             <Link href={"#"}>회사소개</Link>
           </li>
