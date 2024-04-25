@@ -17,7 +17,7 @@ function CSChat() {
       <div>{showChat && <ChatSection />}</div>
       <button
         onClick={handleClickChat}
-        className="bg-gray-900 z-30 fixed bottom-10 right-8 rounded-2xl -translate-y-2 w-14 h-14 flex justify-center items-center"
+        className="bg-gray-700 z-30 fixed bottom-10 right-8 rounded-2xl -translate-y-2 w-14 h-14 flex justify-center items-center"
       >
         {showChat ? (
           <IoClose className="text-4xl text-white" />
