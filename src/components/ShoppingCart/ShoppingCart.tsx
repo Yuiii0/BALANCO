@@ -44,7 +44,7 @@ function ShoppingCartButton({ iconType, productId }: AddToCartButtonProps) {
   };
 
   return iconType ? (
-    <button onClick={handleClickButton} className="cursor-pointer text-xl">
+    <button onClick={handleClickButton} className="cursor-pointer text-xl ">
       {isAlreadyAdded ? (
         <MdOutlineRemoveShoppingCart />
       ) : (
@@ -56,7 +56,7 @@ function ShoppingCartButton({ iconType, productId }: AddToCartButtonProps) {
       color={isAlreadyAdded ? "white" : "black"}
       onClick={handleClickButton}
     >
-      {isAlreadyAdded ? "장바구니에서 삭제" : "장바구니에 추가"}
+      {isAlreadyAdded ? "장바구니에서 삭제" : "장바구니 추가"}
     </Button>
   );
 }

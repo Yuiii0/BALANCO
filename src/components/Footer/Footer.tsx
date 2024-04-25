@@ -4,9 +4,9 @@ import { MdOutlineEmail } from "react-icons/md";
 
 function Footer() {
   return (
-    <footer className="bg-black h-48 px-16 pt-10 pb-8">
-      <div className="flex justify-between">
-        <ul className="text-white flex gap-x-4 text-sm transition mb-2">
+    <footer className="bg-black h-48 sm-max:h-52 px-16 pt-10 pb-8 sm-max:px-6 sm-max:py-6">
+      <div className="flex justify-between ">
+        <ul className="text-white flex sm-max:flex-col gap-x-4 sm-max:gap-y-1 text-sm sm-max:text-[11px] sm-max:font-light sm-max:text-xs  transition mb-2">
           <li className="hover:text-gray-300">
             <Link href={"#"}>회사소개</Link>
           </li>
@@ -23,8 +23,8 @@ function Footer() {
             <Link href={"#"}>개인정보처리방침</Link>
           </li>
         </ul>
-        <Link href={"#"} className="-translate-y-2 group" target="_blank">
-          <span className="text-gray-100 text-xs font-light opacity-0 group-hover:opacity-100 underline">
+        <Link href={"#"} className="-translate-y-2 group " target="_blank">
+          <span className="text-gray-100 text-xs sm-max:text-xs font-light opacity-0 group-hover:opacity-100 underline">
             portfolio
           </span>
           <Image
@@ -36,12 +36,13 @@ function Footer() {
           />
         </Link>
       </div>
-      <div className="text-sm font-light text-gray-400">
+      <div className="text-sm font-light sm-max:text-[11px]  text-gray-400">
         <p>Web Balanco</p>
-        <p>©2024 Yuiii0 All rights reserved.</p>
+        <p className="sm-max:-translate-y-1">
+          ©2024 Yuiii0 All rights reserved.
+        </p>
       </div>
-
-      <ul className="flex justify-end items-center gap-x-3 ">
+      <ul className="flex justify-end items-center gap-x-3 -translate-y-1 ">
         <li className="flex flex-col items-center justify-center">
           <Link href={"https://github.com/Yuiii0"} target="_blank">
             <svg height="24" width="24" viewBox="0 0 16 16" fill="gray">

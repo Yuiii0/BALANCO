@@ -25,15 +25,18 @@ function ProductCard({ product }: ProductCardProps) {
             unoptimized
           />
         </div>
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 sm-max:gap-y-1">
           <div className="font-bold text-sm text-center">
             {product.brand.nameEn}
           </div>
           <h6 className="font text-[13px] font-extralight w-full h-5 overflow-hidden text-center">
             {product.name}
           </h6>
-          <div className="flex gap-x-2 items-center justify-center">
-            <span className="text-sm font-extralight text-gray-400">
+          <span className="text-sm font-extralight  hidden sm-max:block text-gray-400 sm-max:line-through sm-max:text-[11px] sm-max:-translate-y-1 sm-max:px-1 ">
+            {formatPrice(product.originalPrice)}
+          </span>
+          <div className="flex gap-x-2 items-center justify-center sm-max:justify-start sm-max:px-1 sm-max:-translate-y-1">
+            <span className="text-sm font-extralight text-gray-400 sm-max:hidden">
               {formatPrice(product.originalPrice)}
             </span>
             <span className="text-sm font-bold">
@@ -48,7 +51,7 @@ function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </Link>
-      <div className="mt-6 flex items-center absolute right-1 gap-x-2">
+      <div className="mt-6 sm-max:mt-2 flex items-center absolute right-1 gap-x-2">
         <button className="  hover:scale-110 transition ">
           <LikeProductButton productId={product.id} />
         </button>

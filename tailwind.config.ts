@@ -29,6 +29,11 @@ const config: Config = {
         Montserrat: ["Montserrat", "serif"],
         notoSans: ["Noto Sans KR", "SpoqaHanSansNeo"],
       },
+      screens: {
+        "sm-max": { max: "639px" },
+        "md-max": { max: "767px" },
+        "lg-max": { max: "1023px" },
+      },
     },
   },
   plugins: [],

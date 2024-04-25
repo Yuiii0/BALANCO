@@ -6,11 +6,13 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import Page from "@/components/Page";
 import ShoppingLink from "@/components/ShoppingLink/ShoppingLink";
 import useQueryGetCart from "@/hooks/react-query/cart/useQueryGetCart";
+import { useAuthStore } from "@/stores/auth/authStore";
 import CartItem from "./_components/CartProduct";
 import TotalPrice from "./_components/TotalPrice";
 
 function CartPage() {
-  const { data: cart, isLoading, isError } = useQueryGetCart();
+  const auth = useAuthStore();
+  const { data: cart, isLoading, isError } = useQueryGetCart(auth.isLoggedIn);
 
   const totalPrice = cart?.items.reduce(
     (acc, item) => acc + item.product.price * item.quantity,
