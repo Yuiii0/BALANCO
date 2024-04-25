@@ -24,10 +24,9 @@ const config: Config = {
         primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
       },
       fontFamily: {
-        oswald: ["Oswald"],
         spoqa: ["SpoqaHanSansNeo", "sans-serif"],
-        Montserrat: ["Montserrat", "serif"],
-        notoSans: ["Noto Sans KR", "SpoqaHanSansNeo"],
+        oswald: ["var(--oswald)"],
+        notoSansKr: ["var(--notoSansKr)"],
       },
       screens: {
         "sm-max": { max: "639px" },
