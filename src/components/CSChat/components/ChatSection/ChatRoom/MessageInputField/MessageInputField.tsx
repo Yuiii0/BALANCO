@@ -26,7 +26,7 @@ function MessageInputField({
 
   return (
     <form
-      className="absolute bottom-4 w-11/12 left-4 bg-bg-lightgray  "
+      className="absolute bottom-4  rounded-xl w-11/12 left-4 bg-bg-lightgray  "
       onSubmit={sendMessage}
     >
       <input
