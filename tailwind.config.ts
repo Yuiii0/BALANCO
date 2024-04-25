@@ -17,8 +17,10 @@ const config: Config = {
         warning: "#BD081C",
         lightgray: "#cecece",
         salmon: "#f1736e",
-        "bg-lightgray": "#f6f6f6",
+        "bg-lightgray": "#f7f7f8",
+        "hover-lightgray": "#f2f2f2",
         "custom-gray": "#999999",
+        "bg-pink": "#e9c6d6",
       },
       boxShadow: {
         primary: "0 4px 16px 0 rgba(134, 104, 242, 0.14)",
