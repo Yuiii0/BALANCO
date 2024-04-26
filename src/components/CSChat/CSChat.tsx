@@ -13,7 +13,7 @@ function CSChat() {
   };
 
   return (
-    <aside>
+    <aside className="sm-max:hidden">
       <div>{showChat && <ChatSection />}</div>
       <button
         onClick={handleClickChat}
