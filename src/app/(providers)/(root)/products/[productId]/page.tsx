@@ -17,7 +17,7 @@ async function ProductPage(props: { params: { productId: string } }) {
   return (
     <Page>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 pt-2 ">
-        <div className="relative ">
+        <div className="relative sm-max:w-full h-[420px]  bg-red-100">
           <Image
             alt={product.name}
             src={product.imgSrc}
