@@ -1,7 +1,18 @@
-function MessageList({ messageList, user }) {
-  console.log("messageList,,,,", messageList);
+"use client";
+
+import { useEffect, useRef } from "react";
+
+function MessageList({ messageList }) {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messageList]);
+
   return (
-    <div className="h-[425px] overflow-scroll scrollbar-hide">
+    <div className="h-[425px] overflow-scroll scrollbar-hide" ref={scrollRef}>
       {messageList.map((message) => {
         return (
           <div key={message._id} className="text-sm flex ">
