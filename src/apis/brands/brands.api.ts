@@ -1,4 +1,4 @@
-import { Response } from "@/types/Response.type";
+import { Response } from "@/types/Response/Response.type";
 import { client } from "..";
 import { GetBrandData, GetBrandsData } from "./brands.data";
 
