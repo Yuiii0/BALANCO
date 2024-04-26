@@ -33,6 +33,7 @@ function LogInModal() {
     try {
       await logIn({ email: data.email, password: data.password });
       auth.setIsLoggedIn(true);
+      auth.setEmail(data.email);
       router.push("/");
       modal.close();
     } catch (error) {
