@@ -1,5 +1,5 @@
-export type SocketResponse<D = null> =
-  | { ok: true; data?: D }
+export type SocketResponse =
+  | { ok: true; data?: any }
   | {
       ok: false;
       error: string;
