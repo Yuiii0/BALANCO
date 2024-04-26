@@ -5,6 +5,8 @@ type AuthState = {
   setIsLoggedIn: (isLoggedIn: boolean) => void;
   isAuthInitialized: boolean;
   setIsAuthInitialized: (isInitialized: boolean) => void;
+  email: string;
+  setEmail: (email: string) => void;
 };
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -13,4 +15,6 @@ export const useAuthStore = create<AuthState>((set) => ({
   isAuthInitialized: false,
   setIsAuthInitialized: (isAuthInitialized) =>
     set(() => ({ isAuthInitialized })),
+  email: "",
+  setEmail: (email) => set(() => ({ email })),
 }));
