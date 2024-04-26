@@ -1,9 +1,10 @@
 "use client";
 
 import FileInput from "@/components/FileInput";
+import { SocketResponse } from "@/types/Response/SocketResponse.type";
 import socket from "@/utils/socket/socket";
 import EmojiPicker from "emoji-picker-react";
-import { useState } from "react";
+import { FormEventHandler, useState } from "react";
 import { FaRegSmile } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 
@@ -11,14 +12,15 @@ function MessageInputField() {
   const [message, setMessage] = useState("");
   const [showPicker, setShowPicker] = useState(false);
 
-  const onEmojiClick = (event: any, emojiObject: any) => {
-    setMessage((prevMessage: any) => prevMessage + event.emoji);
+  const onEmojiClick = (event: any) => {
+    console.log(event);
+    setMessage((prevMessage: string) => prevMessage + event.emoji);
     setShowPicker(false);
   };
 
-  const sendMessage = (event: any) => {
+  const sendMessage: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    socket.emit("sendMessage", message, (res: any) => {
+    socket.emit("sendMessage", message, (res: SocketResponse) => {
       console.log("sendMessageRds", res);
     });
     setMessage("");
