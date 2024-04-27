@@ -14,7 +14,13 @@ function CSChat() {
 
   return (
     <aside>
-      <div>{showChat && <ChatSection />}</div>
+      <section
+        className={`transition-opacity duration-500 ${
+          showChat ? "opacity-100" : "opacity-0 "
+        }`}
+      >
+        {showChat && <ChatSection />}
+      </section>
       <button
         onClick={handleClickChat}
         className="bg-gray-700 z-30 fixed bottom-10 right-8 rounded-2xl cursor-pointer -translate-y-2 w-14 h-14 flex justify-center items-center"

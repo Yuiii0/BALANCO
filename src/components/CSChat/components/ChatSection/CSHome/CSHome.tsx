@@ -11,7 +11,7 @@ function CSHome({ setShowChatRoom }: HomeProps) {
   };
 
   return (
-    <section className="w-[390px] h-[610px] bg-bg-lightgray shadow-xl fixed bottom-28 rounded-2xl   right-8 ">
+    <div className="z-50 w-[390px] h-[610px] bg-bg-lightgray shadow-xl fixed bottom-28 rounded-2xl   right-8 ">
       <h2 className="py-8 text-3xl font-bold text-center">BALANCO</h2>
       <div className="w-11/12 mx-auto bg-white px-6 py-4 rounded-2xl">
         <div className="flex gap-x-3">
@@ -54,7 +54,7 @@ function CSHome({ setShowChatRoom }: HomeProps) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
