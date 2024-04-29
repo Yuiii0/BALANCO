@@ -24,21 +24,21 @@ function ItemQuantityController({
   };
   return (
     <div className="grid grid-cols-3 shrink-0 items-stretch self-center">
-      <div
+      <button
         onClick={handleClickMinus}
         className="bg-slate-800 text-white rounded-md px-1.5 py-1"
       >
         <FiMinus />
-      </div>
+      </button>
       <span className="text-center translate-y-0.5 text-lg text-slate-800 ">
         {quantity}
       </span>
-      <div
+      <button
         onClick={handleClickPlus}
         className="bg-slate-800 text-white  px-1.5 py-1 rounded-md"
       >
         <FiPlus />
-      </div>
+      </button>
       <span></span>
     </div>
   );
