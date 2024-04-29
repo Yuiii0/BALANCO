@@ -1,4 +1,7 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5001"); //연결하고싶은 BE 주소
+const socket = io("http://localhost:5001", {
+  reconnectionAttempts: 2,
+  reconnectionDelay: 3000,
+});
 export default socket;
