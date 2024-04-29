@@ -44,13 +44,13 @@ function ShoppingCartButton({ iconType, productId }: AddToCartButtonProps) {
   };
 
   return iconType ? (
-    <button onClick={handleClickButton} className="cursor-pointer text-xl ">
+    <div onClick={handleClickButton} className="cursor-pointer text-xl ">
       {isAlreadyAdded ? (
         <MdOutlineRemoveShoppingCart />
       ) : (
         <MdOutlineAddShoppingCart />
       )}
-    </button>
+    </div>
   ) : (
     <Button
       color={isAlreadyAdded ? "white" : "black"}

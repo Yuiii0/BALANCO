@@ -38,25 +38,25 @@ function HeaderMenu() {
   return (
     <Authenticated>
       <div className="flex gap-x-6 font-semibold">
-        <button onClick={handleClickCart}>
+        <div onClick={handleClickCart}>
           <IoCartOutline className="cursor-pointer  text-lg" />
-        </button>
+        </div>
         {auth.isLoggedIn && (
           <Link href="/mypage">
             <AiOutlineUser className="cursor-pointer text-lg" />
           </Link>
         )}
         {auth.isLoggedIn ? (
-          <button onClick={handleClickLogOut}>
+          <div onClick={handleClickLogOut}>
             <IoIosLogOut
               className="cursor-pointer  text-lg
               "
             />
-          </button>
+          </div>
         ) : (
-          <button onClick={handleClickLogin}>
+          <div onClick={handleClickLogin}>
             <IoIosLogIn className="text-lg  cursor-pointer"></IoIosLogIn>
-          </button>
+          </div>
         )}
       </div>
     </Authenticated>

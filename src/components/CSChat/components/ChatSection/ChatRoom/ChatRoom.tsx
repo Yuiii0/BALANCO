@@ -42,9 +42,9 @@ const ChatRoom = memo(function ChatRoom({ setShowChatRoom }: ChatRoomProps) {
   return (
     <div className="z-50 w-[390px] h-[610px] bg-white shadow-xl fixed bottom-28 rounded-2xl right-8">
       <div className="flex gap-x-8 px-4 py-4 items-center">
-        <button onClick={handleClickGoBack}>
+        <div onClick={handleClickGoBack}>
           <FaAngleLeft className="text-xl text-gray-700" />
-        </button>
+        </div>
         <div className="flex gap-x-3">
           <CustomerProfile />
           <div>
