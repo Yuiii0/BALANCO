@@ -17,7 +17,7 @@ async function ProductPage(props: { params: { productId: string } }) {
   return (
     <Page>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 pt-2 ">
-        <div className="relative sm-max:w-full h-[420px]  bg-red-100">
+        <div className="relative sm-max:w-full sm-max:h-[420px] bg-red-100">
           <Image
             alt={product.name}
             src={product.imgSrc}
@@ -69,7 +69,7 @@ async function ProductPage(props: { params: { productId: string } }) {
             </div>
             <div className="col-span-4 font-light sm-max:ml-4">{`${product.onlineStock}개`}</div>
           </div>
-          <div className="text-end pr-5 -translate-y-20 ">
+          <div className=" ml-auto lg-max:-translate-y-16 -translate-y-20">
             <LikeProductButton productId={productId} />
           </div>
           <div className="flex gap-x-4 sm-max:-translate-y-10">
