@@ -12,13 +12,13 @@ function LikeProductButton({ productId }: LikeProductButtonProps) {
   const isLikedProduct = isLiked(productId);
 
   return (
-    <button
+    <div
       onClick={() => toggleLikedProduct(productId)}
       aria-label={isLikedProduct ? "unlike-product" : "like-product"}
       className="cursor-pointer text-2xl transition"
     >
       {isLikedProduct ? <IoMdHeart /> : <IoMdHeartEmpty />}
-    </button>
+    </div>
   );
 }
 

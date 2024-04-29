@@ -8,9 +8,12 @@ interface BrandNavProps {
 function BrandNav({ brandId }: BrandNavProps) {
   const { data: brands } = useQueryGetBrands();
 
+  brands?.sort((a, b) => a.nameEn.localeCompare(b.nameEn));
+  console.log("brands", brands);
+
   return (
     <nav className="mb-16">
-      <ul className="grid grid-cols-2 sm:grid-cols-4  gap-x-4 gap-y-2 px-12 ">
+      <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-2 px-12">
         <li className="col-span-2 sm:col-span-4 text-center mb-4 text-lg font-bold ">
           <BrandLink href="/brands" label="ALL" isActive={!brandId} />
         </li>

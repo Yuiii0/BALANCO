@@ -52,12 +52,12 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
       <div className="mt-6 sm-max:mt-2 flex items-center absolute right-1 gap-x-2">
-        <button className="  hover:scale-110 transition ">
+        <div className="  hover:scale-110 transition ">
           <LikeProductButton productId={product.id} />
-        </button>
-        <button className="  hover:scale-110 transition ">
+        </div>
+        <div className="  hover:scale-110 transition ">
           <ShoppingCart productId={product.id} iconType />
-        </button>
+        </div>
       </div>
     </div>
   );
