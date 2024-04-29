@@ -17,7 +17,7 @@ async function ProductPage(props: { params: { productId: string } }) {
   return (
     <Page>
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 pt-2 ">
-        <div className="relative sm-max:w-full sm-max:h-[420px] bg-red-100">
+        <div className="relative sm-max:w-full sm-max:h-[420px]">
           <Image
             alt={product.name}
             src={product.imgSrc}
@@ -34,14 +34,16 @@ async function ProductPage(props: { params: { productId: string } }) {
             {product.name}
           </h1>
           <div className="grid grid-cols-5 sm-max:px-1 my-6 sm-max:my-3 gap-x-5 sm-max:gap-y-3.5 gap-y-5 text-[15px] border-b-2 border-black pb-6 sm-max:pb-4 relative">
-            <div className="text-slate-900 font-bold  sm-max:w-24">
+            <div className="text-slate-900 font-bold  sm-max:w-24 lg-max:w-28">
               상품 금액
             </div>
-            <div className="col-span-4 font-light line-through text-custom-gray sm-max:ml-4 ">
+            <div className="col-span-4 font-light line-through text-custom-gray sm-max:ml-4 lg-max:ml-6">
               {`${formatPrice(product.originalPrice)}원`}
             </div>
-            <div className="text-slate-900 font-bold sm-max:w-24">판매가</div>
-            <div className="col-span-4 font-extrabold text-lg -translate-y-0.5 font-notoSans sm-max:ml-4">
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28">
+              판매가
+            </div>
+            <div className="col-span-4 font-extrabold text-lg -translate-y-0.5 font-notoSans sm-max:ml-4 lg-max:ml-6">
               <span>{`${formatPrice(product.price)}원`}</span>
               <span className="text-warning ml-3 text-[15px]">
                 {calculateDiscountPercentage(
@@ -50,29 +52,39 @@ async function ProductPage(props: { params: { productId: string } }) {
                 )}
               </span>
             </div>
-            <div className="text-slate-900 font-bold sm-max:w-24">적립금</div>
-            <div className="col-span-4 font-light sm-max:ml-4">
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28 ">
+              적립금
+            </div>
+            <div className="col-span-4 font-light sm-max:ml-4 lg-max:ml-6">
               {`${formatPrice(calculateRewards(product.price))}원`}
             </div>
-            <div className="text-slate-900 font-bold sm-max:w-24">
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28  ">
               무이자할부
             </div>
-            <div className="col-span-4 font-light sm-max:ml-4">최대 12개월</div>
-            <div className="text-slate-900 font-bold sm-max:w-24">배송</div>
-            <div className="col-span-4 font-semibold sm-max:ml-4">
+            <div className="col-span-4 font-light sm-max:ml-4 lg-max:ml-6">
+              최대 12개월
+            </div>
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28">
+              배송
+            </div>
+            <div className="col-span-4 font-semibold sm-max:ml-4 lg-max:ml-6">
               {getDeliveryDate()}
             </div>
-            <div className="text-slate-900 font-bold sm-max:w-24">배송비</div>
-            <div className="col-span-4 font-light sm-max:ml-4">무료</div>
-            <div className="text-slate-900 font-bold sm-max:w-24">
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28">
+              배송비
+            </div>
+            <div className="col-span-4 font-light sm-max:ml-4 lg-max:ml-6">
+              무료
+            </div>
+            <div className="text-slate-900 font-bold sm-max:w-24 lg-max:w-28">
               잔여 재고
             </div>
-            <div className="col-span-4 font-light sm-max:ml-4">{`${product.onlineStock}개`}</div>
+            <div className="col-span-4 font-light sm-max:ml-4 lg-max:ml-6 ">{`${product.onlineStock}개`}</div>
           </div>
           <div className=" ml-auto lg-max:-translate-y-16 -translate-y-20">
             <LikeProductButton productId={productId} />
           </div>
-          <div className="flex gap-x-4 sm-max:-translate-y-10">
+          <div className="flex gap-x-4 lg-max:-translate-y-10">
             <ShoppingCart productId={productId} />
             <Button>구매하기</Button>
           </div>
