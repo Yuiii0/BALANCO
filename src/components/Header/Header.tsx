@@ -41,14 +41,10 @@ function Header() {
       </div>
 
       <div className="flex justify-center">
-        <div className="text-5xl sm-max:text-[26px] pb-2.5 sm-max:-translate-y-2">
-          <Link href="/" className="font-bold font-oswald tracking-tighter">
-            {/* <Image
-              src={"/utils/images/logo.png"}
-              alt="BLANCO"
-              width={200}
-              height={40}
-            /> */}
+        <div
+          className={"text-5xl sm-max:text-[26px] pb-2.5 sm-max:-translate-y-2"}
+        >
+          <Link href="/" className="font-bold tracking-tighter">
             BLANCO
           </Link>
         </div>
