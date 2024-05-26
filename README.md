@@ -76,14 +76,14 @@ BALANCO는 명품 쇼핑몰로써, 고급스럽고 세련된 느낌을 위해 �
 
 #### Cart
 
-<img src="../balanco/public/utils/readme_images/cart.gif" alt="CartPage" width=800/>
+<img src="/public/utils/readme_images/cart.gif" alt="CartPage" width=800/>
 
 장바구니 페이지를 통해, 총 결제해야할 금액들을 확인할 수 있습니다.
 <br>
 
 #### MyPage
 
-<img src="../balanco/public/utils/readme_images/MyPage.png" alt="MyPage" width=800/>
+<img src="/public/utils/readme_images/MyPage.png" alt="MyPage" width=800/>
 
 마이페이지에서 좋아요한 상품들의 리스트들을 확인할 수 있습니다.
 <br>
@@ -98,14 +98,18 @@ BALANCO는 명품 쇼핑몰로써, 고급스럽고 세련된 느낌을 위해 �
 ### 기술 스택
 
 <hr>
+
+<div style="display:flex gap:10px">
 <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
 <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
 <img src="https://img.shields.io/badge/zustand-4D4DFF?style=for-the-badge&logo=zustand&logoColor=white">
 <img src="https://img.shields.io/badge/react--query-FF4154?style=for-the-badge&logo=react-query&logoColor=white">
 <img src="https://img.shields.io/badge/socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white">
 <img src="https://img.shields.io/badge/tailwindcss-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white">
-<img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+</div>
+<div style="display: flex; gap:5px"><img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"></div>
+<br>
 
 #### commit convention
 
@@ -119,6 +123,73 @@ BALANCO는 명품 쇼핑몰로써, 고급스럽고 세련된 느낌을 위해 �
 | 🔀     | merge    | merge                                                    |
 | 🚚     | rename   | 파일, 폴더명 수정 혹은 이동                              |
 | 💎     | style    | 코드 포맷팅, 세미콜론 누락 등                            |
+
+<br>
+
+### 프로젝트 구조
+
+```
+📦src
+ ┣ 📂apis
+ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📜auth.api.ts
+ ┃ ┃ ┗ 📜auth.dto.ts
+ ┃ ┣ 📂brands
+ ┃ ┣ 📂cart
+ ┃ ┣ 📂products
+ ┃ ┗ 📜index.ts
+ ┣ 📂app
+ ┃ ┣ 📂(providers)
+ ┃ ┃ ┣ 📂(root)
+ ┃ ┃ ┃ ┣ 📂brands
+ ┃ ┃ ┃ ┣ 📂cart
+ ┃ ┃ ┃ ┣ 📂mypage
+ ┃ ┃ ┃ ┣ 📂products
+ ┃ ┃ ┃ ┃ ┗ 📂[productId]
+ ┃ ┃ ┃ ┣ 📂sign-up
+ ┃ ┃ ┃ ┣ 📜layout.tsx
+ ┃ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┃ ┗ 📜layout.tsx
+ ┃ ┣ 📜layout.tsx
+ ┃ ┗ 📜not-found.tsx
+ ┣ 📂components
+ ┃ ┣ 📂Button
+ ┃ ┣ 📂CSChat
+ ┃ ┣ 📂ErrorComponent
+ ┃ ┣ 📂FileInput
+ ┃ ┣ 📂Footer
+ ┃ ┣ 📂Header
+ ┃ ┣ 📂Heading
+ ┃ ┣ 📂Input
+ ┃ ┣ 📂LikeProductButton
+ ┃ ┣ 📂LoadingSpinner
+ ┃ ┣ 📂Modal
+ ┃ ┣ 📂Page
+ ┃ ┣ 📂Pagination
+ ┃ ┣ 📂ProductCardsList
+ ┃ ┣ 📂ShoppingCart
+ ┣ 📂contexts
+ ┃ ┗ 📜modal.context.tsx
+ ┣ 📂hooks
+ ┃ ┣ 📂react-query
+ ┃ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📂brands
+ ┃ ┃ ┣ 📂cart
+ ┃ ┃ ┣ 📂products
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂stores
+ ┃ ┣ 📂auth
+ ┃ ┗ 📂products
+ ┣ 📂styles
+ ┃ ┣ 📜globals.css
+ ┣ 📂types
+ ┃ ┣ 📂Response
+ ┃ ┣ 📜Brand.type.ts
+ ┃ ┣ 📜Cart.type.ts
+ ┃ ┗ 📜Product.type.ts
+ ┗ 📂utils
+
+```
 
 ### Installation
 
