@@ -26,6 +26,22 @@ BALANCO는 명품 쇼핑몰로써, 고급스럽고 세련된 느낌을 위해 �
 📌 장바구니 기능을 사용해서 결제할 금액을 확인할 수 있습니다<br>
 📌 고객센터와 채팅기능을 사용해, 문의사항을 채팅으로 남길 수 있습니다.
 
+### 기술 스택
+
+<hr>
+
+<div style="display:flex gap:10px">
+<img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
+<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/zustand-4D4DFF?style=for-the-badge&logo=zustand&logoColor=white">
+<img src="https://img.shields.io/badge/react--query-FF4154?style=for-the-badge&logo=react-query&logoColor=white">
+<img src="https://img.shields.io/badge/socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white">
+<img src="https://img.shields.io/badge/tailwindcss-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white">
+</div>
+<div style="display: flex; gap:5px"><img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"></div>
+<br>
+
 ### 도메인 소개
 
 #### Main
@@ -97,21 +113,7 @@ BALANCO는 명품 쇼핑몰로써, 고급스럽고 세련된 느낌을 위해 �
 고객센터 채팅 기능을 통해 유저는 문의사항을 남길 수 있습니다.
 <br>
 
-### 기술 스택
 
-<hr>
-
-<div style="display:flex gap:10px">
-<img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
-<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-<img src="https://img.shields.io/badge/zustand-4D4DFF?style=for-the-badge&logo=zustand&logoColor=white">
-<img src="https://img.shields.io/badge/react--query-FF4154?style=for-the-badge&logo=react-query&logoColor=white">
-<img src="https://img.shields.io/badge/socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white">
-<img src="https://img.shields.io/badge/tailwindcss-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white">
-</div>
-<div style="display: flex; gap:5px"><img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"></div>
-<br>
 
 #### commit convention
 
